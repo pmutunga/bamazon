@@ -1,0 +1,23 @@
+{
+  "name": "bamazon",
+  "version": "1.0.0",
+  "description": "Welcome to Bamazon - a unique Command Line Instruction(CLI)-based shopping experience.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pmutunga/bamazon.git"
+  },
+  "author": "pmutunga",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pmutunga/bamazon/issues"
+  },
+  "homepage": "https://github.com/pmutunga/bamazon#readme",
+  "dependencies": {
+    "inquirer": "^6.2.2",
+    "mysql": "^2.16.0"
+  }
+}
