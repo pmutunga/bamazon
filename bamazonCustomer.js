@@ -98,9 +98,9 @@ var displayProd = function(){
           connection.query(sql, [{stock_quantity: stockLeft}, {product_name:answer.product}], function(err, res) {
             if (err) throw err;
             console.log(res.affectedRows + " products updated!\n");
-          
+            continueShopping(); //find out how to delay
           }); //end of SQL update
-          continueShopping(); //find out how to delay
+          
         } //end of else
       }); //end of product search query
     
@@ -117,7 +117,7 @@ var displayProd = function(){
     .prompt ({
       name: "action",
       type: "list",
-      message: "Would you like to continue shopping?",
+      message: "Continue shopping?",
       choices: ["YES", "NO"]
     })
     .then(function(answer){
