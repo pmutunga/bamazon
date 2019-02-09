@@ -18,9 +18,9 @@ This is a mySQL assignment completed in Week 12 of the UoT Coding bootcamp
 * MySQL
 * Inquirer
 
-## How I built it
+## Customer View
 
-### Customer View
+### How I built it
 
  - Create MySQL database, bamazon
  - Create table in bamazon called products. Products has the following columns:
@@ -40,3 +40,30 @@ This is a mySQL assignment completed in Week 12 of the UoT Coding bootcamp
    * Ask how many units of the product they would like to buy.
 -  Once the customer has placed the order, application checks if there is enough stock of the product to meet the customer's request. If not, the app displays the message `Insufficient quantity!`, and then prevents the order from going through. The app asks the user if they would like to continue shopping.
 - If the store has enough of the product, the app displays to the user to total cost of the purchase and then updates the DB to display remaining quantity.
+
+### How it works
+
+* To start the app, type node bamazonCustomer.js in the terminal. The app displays a list of available products and asks the user if they would like to shop. Note: The app only displays products that are in stock. If the stock quantity of a product is zero, it is not displayed to the user. If the user selects "NO", the app stops and disconnects from the mySQL database. 
+
+![BamazonCustomer1](images/bamazonCustomer1.PNG)
+
+* When the user opts to continue shopping, the app displays a list of items they can select from.
+
+![BamazonCustomer2](images/bamazonCustomer2.PNG)
+
+* Once the user selects the product, the app prompts them to enter to quantity they'd like.
+
+![BamazonCustomer3](images/bamazonCustomer3.PNG)
+
+* If there is insufficient stock to fulfill the order, the app displays the message "Insufficient Produtcs" and prompts the user if to continue shopping.
+
+![BamazonCustomer4](images/bamazonCustomer4.PNG)
+
+* If there's enough stock to fulfill the order, the app displays the total purchase price, updates the database by decreasing the stock_quantity by the quantity purchased and then the app propmts the user to continue shopping.
+
+![BamazonCustomer5](images/bamazonCustomer5.PNG)
+
+
+
+
+
