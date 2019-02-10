@@ -26,4 +26,4 @@ PRIMARY KEY(item_id)
 
 -- add products
 INSERT INTO products (product_name, department_name, price, stock_quantity) 
-VALUES ("75 Inch Samsung TV", "Argentia", 1995, 20), ("45 Inch Sharp TV", "Argentia", 1295, 25), ("Helmet", "Heartland", 30, 100),("Bike", "Heartland", 250, 20), ("Soccer Ball", "Heartland", 10, 150), ("Skates", "Square One", 300, 12), ("Ice Cream", "Argentia", 2, 1000), ("Bread", "Square One", 1.50, 200), ("T-shirt", "Square One", 10, 500), ("Gift-card", "Heartland", 10, 12)
+VALUES ("75 Inch Samsung TV", "Electronics", 1995, 20), ("45 Inch Sharp TV", "Electronics", 1295, 25), ("Helmet", "Sports", 30, 100),("Bike", "Sports", 250, 20), ("Soccer Ball", "Sports", 10, 150), ("Skates", "Sports", 300, 12), ("Ice Cream", "Frozen Goods", 2, 1000), ("Bread", "Bakery", 1.50, 200), ("T-shirt", "Clothing", 10, 500), ("Gift-card", "Cards", 10, 12)
