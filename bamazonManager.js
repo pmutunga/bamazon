@@ -15,6 +15,8 @@ var connection = mysql.createConnection({
 
 //Define variables
 var sql = " ";
+var newQuantity; //will use this variable when adding stock
+var current_stock;
 
 // connect to the mysql server and sql database
 connection.connect(function(err) {
@@ -110,16 +112,16 @@ var displayLow = function(){
         console.log("Time to shop");
         displayMenu();
       });
-    }
+    } //end of displayLow()
   
-    // Add to Inventory
-  //Prompt user to choose item to restock
+  // Add to Inventory
+  //Use Inquirer to Prompt user to choose item to restock
   var addInventory = function(){
-    sql = "SELECT * FROM products";
     console.log("Select a Product to replenish");
+    sql = "SELECT * FROM products";
     //query databse to get product items
-         
-    connection.query(sql, function(err, res) {
+        
+    connection.query(sql, function(err, res) { //SQl query #1
     if (err) throw err;
     //console.log(res);
       
@@ -145,30 +147,34 @@ var displayLow = function(){
       }
     ]) //end of inquirer prompt
     .then(function(answer){
-      //console.log(answer.product);
-      //console.log(answer.quantity);
-      var newQuantity;
+      console.log("Thank you. Let's replenish " + answer.product_name + " by: " + parseInt(answer.quantity));
+      
       // add inventory
-      sql = "SELECT * FROM products WHERE ?"
+      sql = "SELECT * FROM products WHERE ?";
       connection.query(sql,{product_name:answer.product_name}, function(err, res){
-     
-      newQuantity = parseInt(res[0].stock_quantity) + parseInt(answer.quantity);
-      console.log(newQuantity);  //question for TA - how to make this an Integer?
-        });
-          //update qunatities in SQL db
+      if (err) throw err;
+     current_stock = parseInt(res[0].stock_quantity);
+      console.log("Current stock for " + res[0].product_name + " is: " + current_stock);
+      newQuantity = current_stock + parseInt(answer.quantity);
+      console.log(newQuantity);
+
+          //update quantities in SQL db
           sql = "UPDATE products SET ? WHERE ?",
-          connection.query(sql, [{stock_quantity: newQuantity}, {product_name:answer.product_name}], function(err, res) {
+          connection.query(sql, [{stock_quantity:newQuantity}, {product_name:answer.product_name}], function(err, res) {
+           
+            console.log(parseInt(newQuantity));  //question for TA - how to make this an Integer?
+            
             if (err) throw err;
             console.log(res.affectedRows + " products updated!\n");
             displayMenu(); 
           }); //end of SQL update
-          
-        }); //end of sql query
+        }); //end of product search query
+        }); //SQl add inventory query #1
     }); //end of call-back
   }//end of addInventory() 
 
     // Add a new product to Inventory
-  //Prompt user to choose item to restock
+  //Prompt user to choose item to add
   var addNew = function(){
    
     console.log("Add a new product");
@@ -220,12 +226,12 @@ var displayLow = function(){
     }); //end of call-back
   }//end of addInventory() 
 
-    // Add to Inventory
-  //Prompt user to choose item to restock
+    // Delete Products
+  //Prompt user to choose item to delete
   var deleteProduct = function(){
     sql = "SELECT * FROM products";
     console.log("Select a Product to delete");
-    //query databse to get product items
+    //query database to get product items
          
     connection.query(sql, function(err, res) {
     if (err) throw err;

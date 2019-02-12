@@ -85,7 +85,7 @@ var displayProd = function(){
       
       connection.query(sql, {product_name: answer.product}, function(err, res) {
         if (err) throw err;
-        var stockLeft = parseInt(res[0].stock_quantity) - parseInt(answer.quantity);
+        var stockLeft = parseInt(res[0].stock_quantity, 10) - parseInt(answer.quantity,10);
         console.log(stockLeft);
         if(stockLeft < 0) {
           console.log("Insufficient products!");
