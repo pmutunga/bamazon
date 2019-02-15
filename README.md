@@ -75,34 +75,44 @@ A manager can use this application to:
 * Add New Product: If a manager selects Add New Product, the app allows the manager to add a completely new product to the store.
 * Delete Products: The manager can delete any product.
 
-### Manager View Screenshots
+### Screenshots
 
 Manager Menu
+
 ![BamazonManager1](images/bamazonManager1.PNG)
 
 Manager Product View
+
 ![BamazonManager2](images/bamazonManager2.PNG)
 
 Manager View Low Inventory
+
 ![BamazonManager3](images/bamazonManager3.PNG)
 
 Manager Add Product Stock
+
 ![BamazonManager4](images/bamazonManager4.PNG)
 
 Manager Add New Inventory
+
 ![BamazonManager5](images/bamazonManager5.PNG)
 
-## Manager View
+## Supervisor View
 To start the app, type node bamazonSupervisor.js in the terminal
+
+### Screenshots 
 
 
 Supervisor Menu
+
 ![BamazonSupervisor1](images/bamazonSupvervisor1.PNG)
 
 Supervisor View Product sales by department
+
 ![BamazonSupervisor2](images/bamazonSupvervisor2.PNG)
 
 Supervisor add a new department
+
 ![BamazonSupervisor3](images/bamazonSupvervisor3.PNG)
 
 
