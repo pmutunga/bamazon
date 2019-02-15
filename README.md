@@ -97,13 +97,15 @@ To start the app, type node bamazonSupervisor.js in the terminal
 
 
 Supervisor Menu
-![BamazonSupervisor1](images/bamazonSupervisor1.PNG)
+![BamazonSupervisor1](images/bamazonSupvervisor1.PNG)
 
 Supervisor View Product sales by department
-![BamazonSupervisor2](images/bamazonSupervisor2.PNG)
+![BamazonSupervisor2](images/bamazonSupvervisor2.PNG)
 
 Supervisor add a new department
-![BamazonSupervisor3](images/bamazonSupervisor3.PNG)
+![BamazonSupervisor3](images/bamazonSupvervisor3.PNG)
+
+
 
 ## Database Schema
 
