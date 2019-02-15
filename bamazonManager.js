@@ -109,7 +109,7 @@ var displayLow = function(){
           console.log(res[i].item_id + " | " + res[i].product_name + " | " + res[i].department_name + " | " + res[i].price + " | " + res[i].stock_quantity);
           console.log("-----------------------------------");   
         }
-        console.log("Time to shop");
+        console.log("Manage your products");
         displayMenu();
       });
     } //end of displayLow()

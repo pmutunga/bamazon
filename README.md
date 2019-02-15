@@ -64,6 +64,49 @@ This is a mySQL assignment completed in Week 12 of the UoT Coding bootcamp
 ![BamazonCustomer5](images/bamazonCustomer5.PNG)
 
 
+## Manager View
+To start the app, type node bamazonManager.js in the terminal
+
+A manager can use this application to:
+
+* View Products for Sale: If a manager selects View Products for Sale, the app lists every available item: the item IDs, names, prices, and quantities.
+* View Low Inventory; If a manager selects View Low Inventory, the app displays a list of items with an inventory count lower than five.
+* Add to Inventory: If a manager selects Add to Inventory, the app displays a prompt that allows the manager "add more" of any item currently in the store.
+* Add New Product: If a manager selects Add New Product, the app allows the manager to add a completely new product to the store.
+* Delete Products: The manager can delete any product.
+
+### Manager View Screenshots
+
+Manager Menu
+![BamazonManager1](images/bamazonManager1.PNG)
+
+Manager Product View
+![BamazonManager2](images/bamazonManager2.PNG)
+
+Manager View Low Inventory
+![BamazonManager3](images/bamazonManager3.PNG)
+
+Manager Add Product Stock
+![BamazonManager4](images/bamazonManager4.PNG)
+
+Manager Add New Inventory
+![BamazonManager5](images/bamazonManager5.PNG)
+
+## Manager View
+To start the app, type node bamazonSupervisor.js in the terminal
 
 
+Supervisor Menu
+![BamazonSupervisor1](images/bamazonSupervisor1.PNG)
 
+Supervisor View Product sales by department
+![BamazonSupervisor2](images/bamazonSupervisor2.PNG)
+
+Supervisor add a new department
+![BamazonSupervisor3](images/bamazonSupervisor3.PNG)
+
+## Database Schema
+
+The database has 2 tables; products and departments.
+
+![bamazonDB](images/bamazonDB.PNG)

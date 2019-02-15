@@ -43,7 +43,7 @@ var displayProd = function(){
         console.log("-----------------------------------");   
       }
       console.log("Time to shop");
-      continueShopping();
+      shopItems();
     });
   }
 
@@ -87,16 +87,21 @@ var displayProd = function(){
         if (err) throw err;
         var stockLeft = parseInt(res[0].stock_quantity, 10) - parseInt(answer.quantity,10);
         console.log(stockLeft);
+        //var sales = parseInt(res[0].product_sales) + parseInt(answer.quantity);
         if(stockLeft < 0) {
           console.log("Insufficient products!");
           continueShopping();
         } else {
-          console.log("Your purchase price for " + answer.quantity + "  " + answer.product + " is " + (res[0].stock_quantity * res[0].price));
-
+          var purchasePrice = answer.quantity*res[0].price;
+          console.log("Your purchase price for " + answer.quantity + "  " + answer.product + " is " + purchasePrice);
+          
+          var sales = res[0].product_sales + purchasePrice;
           //update qunatities in SQL db
-          sql = "UPDATE products SET ? WHERE ?",
-          connection.query(sql, [{stock_quantity: stockLeft}, {product_name:answer.product}], function(err, res) {
+         
+          sql = "UPDATE products SET ? , ? WHERE ?",
+          connection.query(sql, [{stock_quantity: stockLeft},{product_sales:sales},{product_name:answer.product}], function(err, res) {
             if (err) throw err;
+            
             console.log(res.affectedRows + " products updated!\n");
             continueShopping(); //find out how to delay
           }); //end of SQL update
@@ -126,8 +131,7 @@ var displayProd = function(){
         connection.end();
         
       } else {
-        
-        shopItems();
+                displayProd();
       }
     })
   }
